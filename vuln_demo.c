@@ -3,10 +3,10 @@
 #include <string.h>
 
 /*
- * Programa intencionalmente vulnerable para demo.
- * Compila y corre "solo" (requiere gcc, que suele estar).
+ * Programa para demo.
+ * Requiere gcc
  *
- * Uso típico (para demo sin que crashee):
+ * Uso sin que crashee:
  *   ./vuln_demo --name Alice --fmt "Hola %s\n" --cmd "echo OK" --file ./README.txt --count 8
  */
 
