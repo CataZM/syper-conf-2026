@@ -6,6 +6,9 @@
  * Programa para demo.
  * Requiere gcc
  *
+ * Compilación:
+ *   gcc -O0 -g -Wall -Wextra -o vuln_demo vuln_demo.c
+ *
  * Uso sin que crashee:
  *   ./vuln_demo --name Alice --fmt "Hola %s\n" --cmd "echo OK" --file ./README.txt --count 8
  */
