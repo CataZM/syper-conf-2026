@@ -78,6 +78,7 @@ int process_inputs(const char *name_arg,
     return 0;
 }
 
+#ifndef FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION
 int main(int argc, char **argv) {
     const char *name_arg = NULL;
     const char *fmt_arg  = NULL;
@@ -102,3 +103,4 @@ int main(int argc, char **argv) {
 
     return process_inputs(name_arg, fmt_arg, cmd_arg, file_arg, count_arg);
 }
+#endif
