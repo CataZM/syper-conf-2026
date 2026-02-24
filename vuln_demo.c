@@ -66,11 +66,12 @@ int process_inputs(const char *name_arg,
     }
 
     char tmp[1024];
-    printf("\nEscribi un texto (hasta 1023 chars). Se copiara al heap buffer:\n");
-    if (fgets(tmp, sizeof(tmp), stdin)) {
-        memcpy(heap_buf, tmp, strlen(tmp) + 1);
-        printf("Guardado en heap_buf: %s\n", heap_buf);
-    }
+    strncpy(tmp, name_arg, sizeof(tmp) - 1);
+    tmp[sizeof(tmp) - 1] = '\0';
+
+    // Vulnerabilidad intencional: posible heap overflow si bytes < strlen(tmp)
+    memcpy(heap_buf, tmp, strlen(tmp) + 1);
+    printf("Guardado en heap_buf: %s\n", heap_buf);
 
     free(heap_buf);
 
